@@ -17,9 +17,7 @@ class PokemonCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        // Handle card tap if needed
-      },
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
           // ganti warna sesuai dengan type

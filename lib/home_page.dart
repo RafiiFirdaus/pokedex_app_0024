@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex_app/detail_page.dart';
 import 'package:pokedex_app/model/dummy_data.dart';
 import 'package:pokedex_app/shared/widget/pokemon_card_widget.dart';
 
@@ -89,7 +90,19 @@ Widget listPokemon() {
       itemCount: dummyPokemonList.length,
       itemBuilder: (context, index) {
         return PokemonCardWidget(
-          onTap: () => {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailPage(
+                  name: dummyPokemonList[index].name,
+                  imageUrl: dummyPokemonList[index].imageUrl,
+                  type: dummyPokemonList[index].type,
+                  number: dummyPokemonList[index].number,
+                ),
+              ),
+            );
+          },
           imageUrl: dummyPokemonList[index].imageUrl,
           name: dummyPokemonList[index].name,
           type: dummyPokemonList[index].type,
