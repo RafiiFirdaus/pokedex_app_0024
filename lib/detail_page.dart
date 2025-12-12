@@ -42,6 +42,7 @@ class _DetailPageState extends State<DetailPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // header
+              const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
@@ -121,7 +122,7 @@ class _DetailPageState extends State<DetailPage> {
 
               // detail forms evolution
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding: const EdgeInsets.symmetric(horizontal: 35.0),
                 child: Row(
                   children: [
                     _buildEvolutionBox(typeColor, isOpacity: true),
@@ -129,6 +130,34 @@ class _DetailPageState extends State<DetailPage> {
                     _buildEvolutionBox(typeColor),
                     const SizedBox(width: 15),
                     _buildEvolutionBox(typeColor, isOpacity: true),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 30),
+
+              // description
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Mega Evolution",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF20214c),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "In order to support its flower, which has grown larger due to Mega Evolution, its back and legs have become stronger.",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF20214c),
+                        height: 1.5,
+                      ),
+                    ),
                   ],
                 ),
               ),
