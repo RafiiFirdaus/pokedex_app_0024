@@ -69,7 +69,7 @@ Widget searchBar(TextEditingController searchController) {
         width: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
-          color: Colors.blueGrey,
+          color: Color(0xFF5d607d),
         ),
         child: Icon(Icons.filter_list),
       ),
