@@ -117,6 +117,21 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
+
+              // detail forms evolution
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Row(
+                  children: [
+                    _buildEvolutionBox(typeColor, isOpacity: true),
+                    const SizedBox(width: 15),
+                    _buildEvolutionBox(typeColor),
+                    const SizedBox(width: 15),
+                    _buildEvolutionBox(typeColor, isOpacity: true),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -139,6 +154,21 @@ class _DetailPageState extends State<DetailPage> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildEvolutionBox(Color color, {bool isOpacity = false}) {
+    return Container(
+      width: 80,
+      height: 80,
+      decoration: BoxDecoration(
+        color: isOpacity ? color.withOpacity(0.5) : color,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      padding: const EdgeInsets.all(10),
+      child: isOpacity
+          ? const Icon(Icons.question_mark, size: 40, color: Colors.white)
+          : Image.network(widget.imageUrl),
     );
   }
 }
