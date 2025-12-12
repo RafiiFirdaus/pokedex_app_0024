@@ -71,7 +71,7 @@ Widget searchBar(TextEditingController searchController) {
           borderRadius: BorderRadius.circular(6),
           color: Color(0xFF5d607d),
         ),
-        child: Icon(Icons.filter_list),
+        child: Icon(Icons.filter_list, color: Colors.white),
       ),
     ],
   );
