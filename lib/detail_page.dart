@@ -39,11 +39,24 @@ class _DetailPageState extends State<DetailPage> {
                       },
                     ),
                     SizedBox(width: 10),
-                    Text(
-                      widget.name,
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Text(
+                            widget.name,
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            widget.number.toString().padLeft(3, '0'),
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Color(0xFF20214c),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],

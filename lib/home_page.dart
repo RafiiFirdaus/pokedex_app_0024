@@ -45,7 +45,7 @@ Widget header() {
       ),
       Text(
         'Search for a pokemon by name or using its National Pokedex number',
-        style: TextStyle(fontSize: 20, color: Colors.grey),
+        style: TextStyle(fontSize: 20, color: Color(0xFF20214c)),
       ),
     ],
   );
