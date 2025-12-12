@@ -14,6 +14,19 @@ class DetailPage extends StatefulWidget {
     required this.number,
   });
 
+  Color _getTypeColor(String type) {
+    switch (type) {
+      case 'Fire':
+        return const Color(0xFFefd3ba);
+      case 'Water':
+        return const Color(0xFFbedbdd);
+      case 'Grass':
+        return const Color(0xFFc3e3d4);
+      default:
+        return Colors.grey[300]!;
+    }
+  }
+
   @override
   State<DetailPage> createState() => _DetailPageState();
 }
@@ -21,6 +34,7 @@ class DetailPage extends StatefulWidget {
 class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
+    Color typeColor = widget._getTypeColor(widget.type);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -59,7 +73,30 @@ class _DetailPageState extends State<DetailPage> {
                         ],
                       ),
                     ),
+                    const SizedBox(width: 48),
                   ],
+                ),
+              ),
+              const SizedBox(height: 20),
+
+              // pokemon image
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Container(
+                  width: double.infinity,
+                  height: 300,
+                  decoration: BoxDecoration(
+                    color: typeColor,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Image.network(
+                      widget.imageUrl,
+                      height: 200,
+                      width: 200,
+                    ),
+                  ),
                 ),
               ),
             ],
