@@ -23,7 +23,13 @@ class PokemonCardWidget extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           // ganti warna sesuai dengan type
-          color: Colors.grey[300],
+          color: type == 'Fire'
+              ? Color(0xFFefd3ba)
+              : type == 'Water'
+              ? Color(0xFFbedbdd)
+              : type == 'Grass'
+              ? Color(0xFFc3e3d4)
+              : Colors.grey[300],
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
