@@ -99,9 +99,45 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ),
               ),
+              const SizedBox(height: 30),
+
+              // menu
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      _buildTabItem("Forms", isActive: true),
+                      _buildTabItem("Detail"),
+                      _buildTabItem("Types"),
+                      _buildTabItem("Stats"),
+                      _buildTabItem("Weakness"),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildTabItem(String title, {bool isActive = false}) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 20.0),
+      child: Column(
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
+              color: isActive ? Colors.black : Colors.grey[400],
+            ),
+          ),
+        ],
       ),
     );
   }
